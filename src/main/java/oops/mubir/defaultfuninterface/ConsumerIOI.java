@@ -5,14 +5,14 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ConsumerIOI {
-    static Consumer<List<Integer>> modify = myList ->{
-        for(int i = 0;i<myList.size();i++){
-            myList.set(i,myList.get(i)*2);
+    static Consumer<List<Integer>> modify = myList -> {
+        for (int i = 0; i < myList.size(); i++) {
+            myList.set(i, myList.get(i) * 2);
         }
     };
 
-   static Consumer<List<Integer> > show = list->{
-        list.stream().forEach(x->System.out.println(x+" ,"));
+    static Consumer<List<Integer>> show = list -> {
+        list.stream().forEach(x -> System.out.println(x + " ,"));
     };
 
     public static void main(String[] args) {
@@ -26,6 +26,7 @@ public class ConsumerIOI {
         show.accept(myList);
 
         System.out.println("###############");
+        // accept means modify first then show
         modify.andThen(show).accept(myList);
     }
 }
