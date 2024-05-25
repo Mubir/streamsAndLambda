@@ -3,7 +3,9 @@ package oops.mubir.defaultfuninterface;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
-
+/**
+ *  consumer used as the last step of pipeline
+ * */
 public class ConsumerIOI {
     static Consumer<List<Integer>> modify = myList -> {
         for (int i = 0; i < myList.size(); i++) {

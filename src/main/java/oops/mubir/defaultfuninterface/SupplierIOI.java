@@ -2,6 +2,11 @@ package oops.mubir.defaultfuninterface;
 
 import java.util.function.Supplier;
 
+/**
+ *  could be used::
+ *  (1) factory method
+ *  (2) lazy initialization.ß
+ * */
 public class SupplierIOI {
     public Supplier<String> supplier;
 
