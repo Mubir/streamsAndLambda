@@ -30,9 +30,15 @@ public class FunctionalInfCh5_4 {
                         }
                 );
 
+        // consumer can make mutable list
+        // if function means immutable.
         List<String> product = data.stream().collect(
                 ArrayList::new,// its a supplier,
                 (list, porduct) -> list.add(porduct.getName()),
+                /**
+                 *  this combiner is important in case of parallel stream
+                 *  which combines 2 result container from different thread.
+                 * */
                 (oldListTotal, newIntermediateList) -> oldListTotal.addAll(newIntermediateList)
         );
     }
