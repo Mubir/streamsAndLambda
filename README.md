@@ -1,1 +1,1 @@
-# functional-programming
+# streams && lambda
