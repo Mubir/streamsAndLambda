@@ -1,4 +1,4 @@
-package oops.mubir.pls.fun;
+package oops.mubir.pls.strlmd;
 
 public class Product {
     int id;

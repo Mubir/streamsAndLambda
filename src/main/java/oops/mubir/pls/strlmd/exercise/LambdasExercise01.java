@@ -1,8 +1,8 @@
 
-package oops.mubir.pls.fun.exercise;
+package oops.mubir.pls.strlmd.exercise;
 
-import oops.mubir.pls.fun.ExampleData;
-import oops.mubir.pls.fun.FProduct;
+import oops.mubir.pls.strlmd.ExampleData;
+import oops.mubir.pls.strlmd.FProduct;
 
 import java.util.List;
 

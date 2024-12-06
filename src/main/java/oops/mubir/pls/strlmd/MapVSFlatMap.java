@@ -1,4 +1,4 @@
-package oops.mubir.pls.fun;
+package oops.mubir.pls.strlmd;
 
 import java.util.Arrays;
 import java.util.List;

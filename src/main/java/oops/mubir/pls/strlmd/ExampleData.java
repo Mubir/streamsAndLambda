@@ -1,10 +1,10 @@
-package oops.mubir.pls.fun;
+package oops.mubir.pls.strlmd;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static oops.mubir.pls.fun.Category.*;
+import static oops.mubir.pls.strlmd.Category.*;
 
 public class ExampleData {
 
