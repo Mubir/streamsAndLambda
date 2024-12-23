@@ -25,7 +25,7 @@ public class LambdasExercise03 {
     public ShoppingCartFactory getShoppingCartFactory() {
         // TODO: Implement interface ShoppingCartFactory by using a method reference
         // Note: Don't implement ShoppingCartFactory with an anonymous class
-        return null; // Replace 'null' by your solution
+        return ShoppingCart::new; // Replace 'null' by your solution
     }
 
     public static class ShoppingCart {
@@ -47,7 +47,10 @@ public class LambdasExercise03 {
 //            products.forEach(product -> total.add(product.getPrice()));
 
             // TODO: Implement this method in whatever way you like (you don't have to use lambda expressions)
-
+            for(FProduct pr:products)
+            {
+                total = total.add(pr.getPrice());
+            }
             return total;
         }
     }
