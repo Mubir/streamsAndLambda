@@ -9,6 +9,7 @@ import oops.mubir.pls.strlmd.FProduct;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FunctionalInterfacesExercise01 {
 
@@ -24,12 +25,12 @@ public class FunctionalInterfacesExercise01 {
      * @param f        Determines which products should be in the result.
      * @return A filtered list of products.
      */
-    public List<FProduct> filterProducts(List<FProduct> products, /* TODO: Replace 'Object' with a functional interface */ Object f) {
+    public List<FProduct> filterProducts(List<FProduct> products, Predicate<FProduct> f) {
         List<FProduct> result = new ArrayList<>();
 
         // TODO: Implement this method. Loop through the list of products, call 'f' to determine if a product should be
         // in the result list, and put it in the result list if appropriate.
-
+        products.stream().filter(f).forEach(result::add);
         return result;
     }
 }

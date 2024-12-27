@@ -38,14 +38,15 @@ public class FunctionalInterfacesExercise02 {
      * @return A Predicate that returns true for products that match the combination of search criteria.
      */
     public Predicate<FProduct> createSearchPredicate(SearchCriteria criteria) {
-        Predicate<FProduct> categoryIs = null; /* TODO: Implement a lambda expression that checks if a product's category is equal to criteria.category */;
+        Predicate<FProduct> categoryIs = product ->product.getCategory().equals(criteria.category); /* TODO: Implement a lambda expression that checks if a product's category is equal to criteria.category */;
         Predicate<FProduct> nameMatches = product -> product.getName().matches(criteria.namePattern);
-        Predicate<FProduct> minimumPriceIs = null; /* TODO: Implement a lambda expression that checks if a product's price is greater than criteria.minimumPrice */;
+        Predicate<FProduct> minimumPriceIs = product -> product.getPrice().compareTo(criteria.maximumPrice)>=0; /* TODO: Implement a lambda expression that checks if a product's price is greater than criteria.minimumPrice */;
         Predicate<FProduct> maximumPriceIs = product -> product.getPrice().compareTo(criteria.maximumPrice) <= 0;
 
-        Predicate<FProduct> predicate = null; /* TODO: Implement a lambda expression that takes a product and always returns true */;
+        Predicate<FProduct> predicate = product -> true; /* TODO: Implement a lambda expression that takes a product and always returns true */;
 
         if (criteria.category != null) {
+            categoryIs = categoryIs.and(nameMatches);
             // TODO: Update 'predicate' to combine it with the 'categoryIs' predicate.
         }
 
