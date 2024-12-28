@@ -34,7 +34,8 @@ public class FunctionalInterfacesExercise03 {
         // Note: This is a one-liner. You don't need a switch statement, for example.
 
 //        return ...;
-
+        return operation.getOperator().applyAsDouble(a,b);
+//call : calculate(10, 5, ArithmeticOperation.ADD))
         throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }
