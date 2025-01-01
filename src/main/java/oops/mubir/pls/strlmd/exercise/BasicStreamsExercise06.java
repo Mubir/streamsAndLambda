@@ -3,6 +3,7 @@ package oops.mubir.pls.strlmd.exercise;
 import oops.mubir.pls.strlmd.FProduct;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BasicStreamsExercise06 {
 
@@ -18,8 +19,10 @@ public class BasicStreamsExercise06 {
         //
         // Hint: Use the appropriate collector in the last step to convert the product strings into a single string.
 
-//        return products.stream()...;
+       return products.stream()
+               .map(product->product.getName())
+               .collect(Collectors.joining("\n"));
 
-        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
+      //  throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }

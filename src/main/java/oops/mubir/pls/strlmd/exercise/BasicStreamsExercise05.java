@@ -1,5 +1,6 @@
 package oops.mubir.pls.strlmd.exercise;
 
+import oops.mubir.pls.strlmd.Category;
 import oops.mubir.pls.strlmd.FProduct;
 
 import java.math.BigDecimal;
@@ -21,8 +22,10 @@ public class BasicStreamsExercise05 {
         // Hint: Use two stream operations; one the find the appropriate products,
         // and another one to check if they all cost less than the price limit.
 
-//        return products.stream()...;
+        return products.stream()
+                .filter(product -> product.getCategory() == Category.OFFICE)
+                .allMatch(product -> product.getPrice().compareTo(priceLimit) > 0);
 
-        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
+        //  throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }
