@@ -5,6 +5,7 @@ import oops.mubir.pls.strlmd.Category;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class BasicStreamsExercise02 {
@@ -46,8 +47,12 @@ public class BasicStreamsExercise02 {
         //
         // Hint: You'll need to use different mapping methods.
 
-//        return categories...;
+        return categories
+                .filter(category -> productsByCategory.containsKey(category)) // Ensure category exists in the map
+                .flatMap(category -> productsByCategory.get(category).stream()) // Get the products for each category
+                .map(productsByCategoryValue -> productsByCategoryValue.getName()) // Transform products to their names
+                .collect(Collectors.toList()); // Collect all product names into a List
 
-        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
+        // throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }
