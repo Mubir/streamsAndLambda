@@ -1,8 +1,10 @@
 package oops.mubir.pls.strlmd.exercise;
 
+import oops.mubir.pls.strlmd.Category;
 import oops.mubir.pls.strlmd.FProduct;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BasicStreamsExercise01 {
 
@@ -21,8 +23,13 @@ public class BasicStreamsExercise01 {
         //
         // Hint: Use the API documentation of interface java.util.stream.Stream.
 
-//        return products.stream()...;
+        return products.stream()
+                .filter(
+                        prod -> prod.getCategory().equals(Category.CLEANING)
+                )
+                .sorted((a, b) -> a.getName().compareTo(b.getName()))
+                .collect(Collectors.toList());
 
-        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
+        //throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }
