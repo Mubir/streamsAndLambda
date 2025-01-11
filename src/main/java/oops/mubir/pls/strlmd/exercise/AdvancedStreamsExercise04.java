@@ -1,9 +1,11 @@
 package oops.mubir.pls.strlmd.exercise;
 
+import oops.mubir.pls.strlmd.Category;
 import oops.mubir.pls.strlmd.FProduct;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AdvancedStreamsExercise04 {
 
@@ -20,8 +22,20 @@ public class AdvancedStreamsExercise04 {
         //
         // Hint: How do you map the products to product names after partitioning them?
 
-//        return products.stream()...;
+        return products.stream().collect(Collectors.partitioningBy(
+                product -> product.getCategory() == Category.FOOD, // Partition based on category
+                Collectors.mapping(FProduct::getName, Collectors.toList())
+        ));
 
-        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
+        /*
+            Use partitioningBy when:
+            The grouping is binary (e.g., true/false).
+            Example: Splitting products into food vs non-food.
+            Use groupingBy when:
+            The grouping involves multiple categories.
+            Example: Grouping products by their category or price range.
+        **/
+
+//        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }

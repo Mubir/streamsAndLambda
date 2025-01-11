@@ -5,6 +5,7 @@ import oops.mubir.pls.strlmd.Category;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class AdvancedStreamsExercise02 {
 
@@ -21,8 +22,10 @@ public class AdvancedStreamsExercise02 {
         // You can use a downstream collector to process the output streams of the grouping operation further.
         // For counting the number of products, look at the API documentation of class Collectors - there's a factory method that you can use.
 
-//        return products.stream()...;
+        return products.stream().collect(
+                Collectors.groupingBy(FProduct::getCategory, Collectors.counting())
+        );
 
-        throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
+        // throw new UnsupportedOperationException("Not yet implemented"); // Remove this line
     }
 }
